@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS products (
     name VARCHAR(50) NOT NULL,
     description VARCHAR(200) NOT NULL,
     quantity INT NOT NULL,
-    price NUMERIC NOT NULL
+    price NUMERIC NOT NULL,
     cart_id BIGINT NOT NULL,
     FOREIGN KEY(cart_id) REFERENCES carts(cart_id) ON DELETE CASCADE
 );

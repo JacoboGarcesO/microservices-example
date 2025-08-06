@@ -12,10 +12,15 @@ public class RouteConfig {
   @Value("${products-service.id}") private String productsServiceId;
   @Value("${products-service.path}") private String productsServicePath;
 
+  @Value("${carts-service.url}") private String cartsServiceUrl;
+  @Value("${carts-service.id}") private String cartsServiceId;
+  @Value("${carts-service.path}") private String cartsServicePath;
+
   @Bean
   public RouteLocator createRouteLocator(RouteLocatorBuilder builder) {
     return builder.routes()
       .route(productsServiceId, route -> route.path(productsServicePath).uri(productsServiceUrl))
+      .route(cartsServiceId, route -> route.path(cartsServicePath).uri(cartsServiceUrl))
       .build();
   }
 }
