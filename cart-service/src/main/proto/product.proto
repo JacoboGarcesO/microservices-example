@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "com.example.cartservice.grpc";
+option java_multiple_files = true;
+option java_outer_classname = "ProductProto";
+
+message ProductRequest {
+  int64 productId = 1;
+}
+
+message ProductResponse {
+  int64 id = 1;
+  string name = 2;
+  string description = 3;
+  int32 stock = 4;
+}
+
+service ProductService {
+  rpc getProduct(ProductRequest) returns (ProductResponse);
+}
