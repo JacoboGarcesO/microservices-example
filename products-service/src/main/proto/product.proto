@@ -12,7 +12,7 @@ message ProductResponse {
   int64 id = 1;
   string name = 2;
   string description = 3;
-  int32 quantity = 4;
+  int32 stock = 4;
   float price = 5;
 }
 
