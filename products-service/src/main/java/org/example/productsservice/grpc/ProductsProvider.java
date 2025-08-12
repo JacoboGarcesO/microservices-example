@@ -29,6 +29,6 @@ public class ProductsProvider extends ProductServiceGrpc.ProductServiceImplBase 
 
         responseObserver.onNext(response);
         responseObserver.onCompleted();
-      }).dispose();
+      }, responseObserver::onError).dispose();
   }
 }

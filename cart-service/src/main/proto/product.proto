@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option java_package = "com.example.cartservice.grpc";
+option java_package = "org.example.cartservice.grpc";
 option java_multiple_files = true;
 option java_outer_classname = "ProductProto";
 
@@ -13,6 +13,7 @@ message ProductResponse {
   string name = 2;
   string description = 3;
   int32 stock = 4;
+  float price = 5;
 }
 
 service ProductService {
