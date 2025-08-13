@@ -29,4 +29,9 @@ public class CartController {
   public Mono<CartDTO> addProduct(@PathVariable String email, @RequestBody AddProductDTO addProductDTO) {
     return service.addProduct(addProductDTO, email);
   }
+
+  @PostMapping("/{email}/purchase")
+  public Mono<CartDTO> purchase(@PathVariable String email) {
+    return service.purchase(email);
+  }
 }
