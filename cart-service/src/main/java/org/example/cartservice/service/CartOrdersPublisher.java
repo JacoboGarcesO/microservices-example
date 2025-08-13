@@ -16,5 +16,4 @@ public class CartOrdersPublisher {
      rabbitTemplate.convertAndSend("cart-exchange", "cart-routing-key", cart);
      System.out.println("Cart created event published");
    }
-
 }
