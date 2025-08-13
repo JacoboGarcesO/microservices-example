@@ -1,27 +1,27 @@
 package org.example.notificationservice.model;
 
 public class Product {
-  private Long id;
+  private Long productId;
   private String name;
-  private String description;
   private Integer quantity;
-
-  public Product(Long id, String name, String description, Integer quantity) {
-    this.id = id;
-    this.name = name;
-    this.description = description;
-    this.quantity = quantity;
-  }
+  private Float totalPrice;
 
   public Product() {
   }
 
-  public Long getId() {
-    return id;
+  public Product(Long productId, String name, Integer quantity, Float totalPrice) {
+    this.productId = productId;
+    this.name = name;
+    this.quantity = quantity;
+    this.totalPrice = totalPrice;
   }
 
-  public void setId(Long id) {
-    this.id = id;
+  public Long getProductId() {
+    return productId;
+  }
+
+  public void setProductId(Long productId) {
+    this.productId = productId;
   }
 
   public String getName() {
@@ -32,19 +32,19 @@ public class Product {
     this.name = name;
   }
 
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
   public Integer getQuantity() {
     return quantity;
   }
 
   public void setQuantity(Integer quantity) {
     this.quantity = quantity;
+  }
+
+  public Float getTotalPrice() {
+    return totalPrice;
+  }
+
+  public void setTotalPrice(Float totalPrice) {
+    this.totalPrice = totalPrice;
   }
 }

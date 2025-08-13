@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class Cart {
-  private Long id;
+  private Long cartId;
   private String userEmail;
   private LocalDateTime createdDate;
   private List<Product> products;
@@ -12,19 +12,19 @@ public class Cart {
   public Cart() {
   }
 
-  public Cart(Long id, String userEmail, LocalDateTime createdDate, List<Product> products) {
-    this.id = id;
+  public Cart(Long cartId, String userEmail, LocalDateTime createdDate, List<Product> products) {
+    this.cartId = cartId;
     this.userEmail = userEmail;
     this.createdDate = createdDate;
     this.products = products;
   }
 
-  public Long getId() {
-    return id;
+  public Long getCartId() {
+    return cartId;
   }
 
-  public void setId(Long id) {
-    this.id = id;
+  public void setCartId(Long cartId) {
+    this.cartId = cartId;
   }
 
   public String getUserEmail() {
