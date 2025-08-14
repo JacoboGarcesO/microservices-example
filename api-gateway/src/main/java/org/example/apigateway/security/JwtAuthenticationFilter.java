@@ -22,6 +22,7 @@ public class JwtAuthenticationFilter  implements GatewayFilter {
     ServerHttpRequest request =  exchange.getRequest();
 
     if (!request.getHeaders().containsKey(HttpHeaders.AUTHORIZATION)) {
+      System.out.println("No Authorization header found");
       exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
       return exchange.getResponse().setComplete();
     }
@@ -29,6 +30,7 @@ public class JwtAuthenticationFilter  implements GatewayFilter {
     String authHeader = request.getHeaders().getFirst(HttpHeaders.AUTHORIZATION);
 
     if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+      System.out.println("Invalid Authorization header");
       exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
       return exchange.getResponse().setComplete();
     }
@@ -37,10 +39,12 @@ public class JwtAuthenticationFilter  implements GatewayFilter {
 
     try {
       if (!jwtService.isValidToken(token)) {
+        System.out.println("Invalid token");
         exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
         return exchange.getResponse().setComplete();
       }
     } catch (Exception e) {
+      System.out.println("Invalid secret");
       exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
       return exchange.getResponse().setComplete();
     }
