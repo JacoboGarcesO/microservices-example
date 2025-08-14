@@ -17,9 +17,9 @@ public class UserService {
     this.encoder = encoder;
   }
 
-  public Mono<User> register(RegisterRequest request) {
+  public Mono<Object> register(RegisterRequest request) {
     return repository.findByUsername(request.username())
-      .switchIfEmpty(repository.save(new User(null, request.username(), encoder.encode(request.password()), request.role())))
-      .flatMap(existing -> Mono.error(new RuntimeException("User already exists")));
+      .flatMap(existing -> Mono.error(new RuntimeException("User already exists")))
+      .switchIfEmpty(repository.save(new User(null, request.username(), encoder.encode(request.password()), request.role())));
   }
 }
