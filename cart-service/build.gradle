@@ -10,6 +10,8 @@ dependencies {
   implementation 'org.springframework.grpc:spring-grpc-spring-boot-starter'
   implementation 'org.springframework.boot:spring-boot-starter-amqp'
   implementation 'com.fasterxml.jackson.core:jackson-databind'
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  testImplementation 'io.projectreactor:reactor-test'
 }
 
 protobuf {

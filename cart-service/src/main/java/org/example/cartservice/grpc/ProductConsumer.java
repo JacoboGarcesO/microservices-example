@@ -9,10 +9,10 @@ import reactor.core.publisher.Mono;
 
 @Component
 public class ProductConsumer {
-  @Value("${products.grpc.host}")
-  private  String grpcHost;
-  @Value("${products.grpc.port}")
-  private   Integer grpcPort;
+//  @Value("${products.grpc.host}")
+//  private  String grpcHost;
+//  @Value("${products.grpc.port}")
+//  private   Integer grpcPort;
   private ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9090).usePlaintext().build();
   private ProductServiceGrpc.ProductServiceBlockingStub stub = ProductServiceGrpc.newBlockingStub(channel);
 
